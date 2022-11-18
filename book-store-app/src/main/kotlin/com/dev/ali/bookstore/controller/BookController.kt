@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/books")
-class TransferController(val service: BookService) {
+class BookController(val service: BookService) {
 
     @PostMapping("/new")
     fun newBook(@RequestBody createBookRequest: CreateBookRequest): ResponseEntity<CreateBookResponse> {
@@ -20,6 +20,5 @@ class TransferController(val service: BookService) {
     @GetMapping("/{title}")
     fun getBook(@PathVariable("title") @NotNull title: String): ResponseEntity<CreateBookResponse> {
         return ResponseEntity.ok(service.getBookByTitle(title).toResponse())
-
     }
 }
