@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS movie;
+CREATE TABLE movie(id serial PRIMARY KEY, title VARCHAR(255), poster VARCHAR(255), imdbRating NUMERIC);
